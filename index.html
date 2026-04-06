@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tanay Joshi — ECE Researcher & Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --obsidian: #0a0a0a;
+    --blue: #00d4ff;
+    --green: #39ff14;
+    --card-bg: #0f1117;
+    --border: rgba(0,212,255,0.18);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--obsidian); color: #c9d1e0; font-family: 'Space Grotesk', sans-serif; overflow-x: hidden; }
+
+  .grid-bg {
+    background-image: linear-gradient(rgba(0,212,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,255,0.04) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+  .grid-bg-green {
+    background-image: linear-gradient(rgba(57,255,20,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(57,255,20,0.03) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(10,10,10,0.88); backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    padding: 0.85rem 2rem; display: flex; justify-content: space-between; align-items: center;
+  }
+  .nav-logo { font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; color: var(--blue); letter-spacing: 0.08em; }
+  .nav-links { display: flex; gap: 1.8rem; }
+  .nav-links a { font-size: 0.78rem; font-family: 'JetBrains Mono', monospace; color: #7a8599; text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--blue); }
+
+  #hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .hero-radial {
+    position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse 70% 60% at 60% 50%, rgba(0,212,255,0.07) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 40% at 20% 80%, rgba(57,255,20,0.05) 0%, transparent 60%);
+  }
+  .hero-inner {
+    position: relative; z-index: 2; max-width: 1100px; width: 100%;
+    padding: 6rem 2rem 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+  }
+  @media(max-width:768px) { .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 2rem; } }
+
+  .status-pill {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(57,255,20,0.08); border: 1px solid rgba(57,255,20,0.25);
+    border-radius: 999px; padding: 0.28rem 0.85rem;
+    font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--green);
+    letter-spacing: 0.05em; margin-bottom: 1.2rem;
+  }
+  .status-dot { width: 7px; height: 7px; background: var(--green); border-radius: 50%; animation: pulse-green 2s infinite; }
+  @keyframes pulse-green { 0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(57,255,20,0.5)} 50%{opacity:0.8;box-shadow:0 0 0 6px rgba(57,255,20,0)} }
+
+  .hero-headline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(1.35rem, 3.2vw, 2.1rem);
+    font-weight: 700; line-height: 1.35; color: #e8edf5; margin-bottom: 0.9rem;
+  }
+  .hero-headline .accent-blue { color: var(--blue); text-shadow: 0 0 18px rgba(0,212,255,0.6); }
+  .hero-headline .accent-green { color: var(--green); text-shadow: 0 0 18px rgba(57,255,20,0.5); }
+  .hero-sub { font-size: 0.95rem; color: #7a8599; line-height: 1.7; margin-bottom: 1.8rem; }
+  .hero-sub strong { color: #aab3c5; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; font-weight: 600;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 0.7rem 1.4rem; border-radius: 4px; cursor: pointer; text-decoration: none;
+    transition: all 0.22s ease;
+  }
+  .btn-blue { background: transparent; color: var(--blue); border: 1px solid rgba(0,212,255,0.5); }
+  .btn-blue:hover { background: rgba(0,212,255,0.1); box-shadow: 0 0 16px rgba(0,212,255,0.3); }
+  .btn-green { background: rgba(57,255,20,0.1); color: var(--green); border: 1px solid rgba(57,255,20,0.4); }
+  .btn-green:hover { background: rgba(57,255,20,0.18); box-shadow: 0 0 16px rgba(57,255,20,0.3); }
+
+  .photo-wrap { display: flex; justify-content: center; align-items: center; position: relative; }
+  .photo-outer {
+    position: relative; width: 280px; height: 280px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue), var(--green), var(--blue));
+    padding: 3px; box-shadow: 0 0 30px rgba(0,212,255,0.35), 0 0 70px rgba(0,212,255,0.12);
+  }
+  .photo-inner { width: 100%; height: 100%; border-radius: 50%; overflow: hidden; background: var(--obsidian); border: 4px solid var(--obsidian); }
+  .photo-inner img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+  .photo-glow { position: absolute; inset: -20px; border-radius: 50%; pointer-events: none; background: radial-gradient(circle, rgba(0,212,255,0.15) 0%, transparent 70%); }
+
+  section { padding: 5rem 2rem; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--blue); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.5rem; }
+  .section-title { font-family: 'JetBrains Mono', monospace; font-size: clamp(1.4rem, 3vw, 2rem); color: #e8edf5; font-weight: 700; margin-bottom: 1rem; }
+  .section-divider { width: 48px; height: 2px; background: linear-gradient(90deg, var(--blue), var(--green)); margin-bottom: 2.5rem; border-radius: 2px; }
+
+  /* Mission */
+  #mission { background: #0d0f14; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .mission-card {
+    background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px;
+    padding: 2.5rem 2.8rem; position: relative; overflow: hidden;
+  }
+  .mission-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--blue), var(--green)); }
+  .mission-tag {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--green);
+    background: rgba(57,255,20,0.07); border: 1px solid rgba(57,255,20,0.2);
+    border-radius: 4px; padding: 0.25rem 0.7rem; display: inline-block; margin-bottom: 1.2rem;
+  }
+  .mission-text { font-size: 1.02rem; line-height: 1.9; color: #9ba5bb; }
+  .mission-text p { margin-bottom: 1.1rem; }
+  .mission-text .highlight { color: #e0e8f5; font-weight: 500; }
+  .mission-text .accent { color: var(--blue); font-style: italic; }
+
+  /* Projects */
+  #projects { background: var(--obsidian); }
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(480px, 1fr)); gap: 1.5rem; }
+  @media(max-width:540px) { .projects-grid { grid-template-columns: 1fr; } }
+
+  .project-card {
+    background: var(--card-bg); border: 1px solid rgba(0,212,255,0.15);
+    border-radius: 10px; padding: 1.8rem; position: relative; overflow: hidden;
+    transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+  }
+  .project-card:hover { border-color: rgba(0,212,255,0.5); box-shadow: 0 0 28px rgba(0,212,255,0.15), 0 8px 32px rgba(0,0,0,0.4); transform: translateY(-3px); }
+  .project-card.green:hover { border-color: rgba(57,255,20,0.5); box-shadow: 0 0 28px rgba(57,255,20,0.15), 0 8px 32px rgba(0,0,0,0.4); }
+  .project-card::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--blue), transparent); }
+  .project-card.green::after { background: linear-gradient(90deg, var(--green), transparent); }
+
+  .proj-icon { font-size: 1.6rem; margin-bottom: 0.7rem; filter: drop-shadow(0 0 6px rgba(0,212,255,0.5)); }
+  .proj-icon.green { filter: drop-shadow(0 0 6px rgba(57,255,20,0.5)); }
+  .proj-title { font-family: 'JetBrains Mono', monospace; font-size: 0.97rem; font-weight: 700; color: #e8edf5; margin-bottom: 0.4rem; line-height: 1.35; }
+  .proj-status { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; padding: 0.2rem 0.6rem; border-radius: 3px; margin-bottom: 1rem; display: inline-block; }
+  .proj-status.pub { background: rgba(57,255,20,0.1); color: var(--green); border: 1px solid rgba(57,255,20,0.25); }
+  .proj-status.review { background: rgba(0,212,255,0.08); color: var(--blue); border: 1px solid rgba(0,212,255,0.25); }
+  .proj-status.live { background: rgba(255,183,0,0.1); color: #ffb700; border: 1px solid rgba(255,183,0,0.3); }
+  .proj-desc { font-size: 0.88rem; color: #7a8599; line-height: 1.72; margin-bottom: 1rem; }
+
+  .challenge-box {
+    background: rgba(0,212,255,0.04); border: 1px solid rgba(0,212,255,0.12);
+    border-left: 3px solid var(--blue); border-radius: 0 6px 6px 0;
+    padding: 0.9rem 1.1rem; margin-bottom: 1.1rem;
+  }
+  .challenge-box.green { background: rgba(57,255,20,0.04); border-color: rgba(57,255,20,0.12); border-left-color: var(--green); }
+  .challenge-label { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: var(--blue); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.45rem; }
+  .challenge-label.green { color: var(--green); }
+  .challenge-text { font-size: 0.81rem; color: #8a95ab; line-height: 1.65; }
+
+  .graph-placeholder {
+    background: rgba(0,212,255,0.03); border: 1px dashed rgba(0,212,255,0.2);
+    border-radius: 6px; padding: 1.2rem; margin-bottom: 1.1rem;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; min-height: 110px;
+  }
+  .graph-label { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: rgba(0,212,255,0.35); text-align: center; }
+
+  .stack-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.1rem; }
+  .badge { font-family: 'JetBrains Mono', monospace; font-size: 0.67rem; padding: 0.2rem 0.6rem; border-radius: 4px; background: rgba(0,212,255,0.06); color: #5ea8b8; border: 1px solid rgba(0,212,255,0.18); }
+  .badge.green { background: rgba(57,255,20,0.06); color: #5daa42; border-color: rgba(57,255,20,0.18); }
+
+  .proj-link { font-family: 'JetBrains Mono', monospace; font-size: 0.73rem; color: var(--blue); text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem; transition: opacity 0.2s; }
+  .proj-link:hover { opacity: 0.7; }
+  .proj-link.green { color: var(--green); }
+
+  /* Skills */
+  #skills { background: #0d0f14; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .skills-cols { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 2.2rem; }
+  .skill-group-title {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--blue);
+    letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.9rem;
+    padding-bottom: 0.5rem; border-bottom: 1px solid rgba(0,212,255,0.15);
+  }
+  .skill-group-title.green { color: var(--green); border-color: rgba(57,255,20,0.15); }
+  .skill-group-title.amber { color: #ffb700; border-color: rgba(255,183,0,0.15); }
+  .skill-tag-grid { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+  .skill-tag {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.71rem;
+    padding: 0.28rem 0.72rem; border-radius: 4px;
+    background: rgba(0,212,255,0.06); color: #7ab8c8; border: 1px solid rgba(0,212,255,0.18);
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .skill-tag:hover { border-color: rgba(0,212,255,0.5); color: var(--blue); }
+  .skill-tag.green { background: rgba(57,255,20,0.06); color: #7daa62; border-color: rgba(57,255,20,0.18); }
+  .skill-tag.green:hover { border-color: rgba(57,255,20,0.5); color: var(--green); }
+  .skill-tag.amber { background: rgba(255,183,0,0.06); color: #b8933a; border-color: rgba(255,183,0,0.18); }
+  .skill-tag.amber:hover { border-color: rgba(255,183,0,0.5); color: #ffb700; }
+
+  /* Honors */
+  #honors { background: var(--obsidian); }
+  .honor-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 0.9rem; }
+  .honor-item {
+    display: flex; gap: 0.8rem; align-items: flex-start;
+    background: var(--card-bg); border: 1px solid rgba(57,255,20,0.12);
+    border-radius: 8px; padding: 1rem 1.2rem; transition: border-color 0.2s;
+  }
+  .honor-item:hover { border-color: rgba(57,255,20,0.35); }
+  .honor-sym { font-family: 'JetBrains Mono', monospace; color: var(--green); font-size: 0.9rem; margin-top: 0.12rem; flex-shrink: 0; }
+  .honor-text { font-size: 0.85rem; color: #8a95ab; line-height: 1.5; }
+  .honor-text strong { color: #c9d1e0; font-weight: 500; }
+
+  /* Media / Repository */
+  .media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+  .embed-wrap { position: relative; padding-bottom: 56.25%; background: #080a0d; border-radius: 10px 10px 0 0; overflow: hidden; }
+  .embed-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+  .embed-wrap-tall { position: relative; padding-bottom: 65%; background: #080a0d; border-radius: 10px 10px 0 0; overflow: hidden; }
+  .embed-wrap-tall iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+
+  .repo-card {
+    background: var(--card-bg); border: 1px solid rgba(0,212,255,0.15);
+    border-radius: 10px; padding: 1.6rem; display: flex; flex-direction: column; gap: 0.9rem;
+    transition: border-color 0.2s, box-shadow 0.2s; position: relative; overflow: hidden;
+  }
+  .repo-card::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--blue), transparent); }
+  .repo-card.green::after { background: linear-gradient(90deg, var(--green), transparent); }
+  .repo-card:hover { border-color: rgba(0,212,255,0.45); box-shadow: 0 0 22px rgba(0,212,255,0.12); }
+  .repo-card.green { border-color: rgba(57,255,20,0.15); }
+  .repo-card.green:hover { border-color: rgba(57,255,20,0.45); box-shadow: 0 0 22px rgba(57,255,20,0.12); }
+  .repo-icon { font-size: 2rem; }
+  .repo-title { font-family: 'JetBrains Mono', monospace; font-size: 0.88rem; font-weight: 700; color: #e8edf5; }
+  .repo-meta { font-size: 0.75rem; color: #5a6479; font-family: 'JetBrains Mono', monospace; }
+  .repo-desc { font-size: 0.81rem; color: #7a8599; line-height: 1.6; flex-grow: 1; }
+
+  /* Footer */
+  footer { background: #080a0d; border-top: 1px solid var(--border); padding: 3rem 2rem; }
+  .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 2rem; }
+  .footer-name { font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; color: var(--blue); }
+  .footer-sub { font-size: 0.78rem; color: #4a5468; margin-top: 0.3rem; }
+  .contact-list { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+  .contact-chip {
+    display: inline-flex; align-items: center; gap: 0.45rem;
+    font-family: 'JetBrains Mono', monospace; font-size: 0.73rem;
+    padding: 0.45rem 0.9rem; border-radius: 5px;
+    background: rgba(0,212,255,0.06); border: 1px solid rgba(0,212,255,0.2);
+    color: #7a8599; text-decoration: none; cursor: pointer; transition: all 0.2s;
+  }
+  .contact-chip:hover { background: rgba(0,212,255,0.12); color: var(--blue); border-color: rgba(0,212,255,0.5); }
+  .copy-feedback { display: none; font-size: 0.65rem; color: var(--green); margin-top: 0.2rem; }
+
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: var(--obsidian); }
+  ::-webkit-scrollbar-thumb { background: rgba(0,212,255,0.25); border-radius: 3px; }
+  .fade-in { opacity: 0; transform: translateY(22px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body class="grid-bg">
+
+<!-- NAV -->
+<nav>
+  <span class="nav-logo">tanay_joshi<span style="color:#39ff14">▮</span></span>
+  <div class="nav-links">
+    <a href="#mission">Philosophy</a>
+    <a href="#projects">Research</a>
+    <a href="#skills">Stack</a>
+    <a href="#media">Repository</a>
+    <a href="#honors">Awards</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-radial"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="status-pill">
+        <span class="status-dot"></span>
+        <span>Class of 2027 · The Woodlands, TX</span>
+      </div>
+      <h1 class="hero-headline">
+        I build <span class="accent-blue">communication systems</span><br/>
+        for the places the<br/>
+        <span class="accent-green">internet doesn't reach.</span>
+      </h1>
+      <p class="hero-sub">
+        <strong>Tanay Joshi</strong> — ECE Researcher · Distributed Systems &amp; Networking<br/>
+        2nd Place Rice STEM Innovator · 1st Place ACAP Entrepreneur · Published Researcher · GPA 5.0W
+      </p>
+      <div style="display:flex;gap:0.8rem;flex-wrap:wrap;">
+        <a href="#mission" class="btn btn-blue">⬡ Read My Philosophy</a>
+        <a href="#projects" class="btn btn-green">⬢ View Research</a>
+      </div>
+    </div>
+    <div class="photo-wrap">
+      <div class="photo-glow"></div>
+      <div class="photo-outer">
+        <div class="photo-inner">
+          <img src="data:image/jpeg;base64,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" alt="Tanay Joshi" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY / FOUNDER'S NOTE -->
+<section id="mission">
+  <div class="section-inner">
+    <div class="section-label fade-in">// engineering philosophy</div>
+    <h2 class="section-title fade-in">Founder's Note</h2>
+    <div class="section-divider fade-in"></div>
+    <div class="mission-card fade-in">
+      <span class="mission-tag">FOUNDER_NOTE.md</span>
+      <div class="mission-text">
+        <p>
+          <span class="highlight">The simulation crashed at 2 AM, and I had no idea why.</span> I'd spent three weeks writing what I thought was a clean RTT-based compression controller for my drone research. The logic was sound. The math checked out. But on the actual Raspberry Pi, under real network congestion, the JPEG quality stepped down to 10% and never recovered — the feedback loop was eating itself.
+        </p>
+        <p>
+          That moment taught me more than any textbook. I had been thinking about the algorithm in isolation, not as something living inside a physical network with jitter, interference, and hardware limits. I had to rebuild the controller with hysteresis — a dead zone to stop it from thrashing quality levels every few hundred milliseconds. It worked. Latency dropped by up to 83%. But I never would have found that fix without first building something that broke completely.
+        </p>
+        <p>
+          That's the engineering philosophy I carry everywhere: <span class="accent">build it until it fails, then understand why.</span> I'm drawn to problems at the boundary of hardware and humanity — places where a dropped packet might mean a missed medication dose, or where a bad network handoff might be the difference between a student who gets help and one who doesn't. I don't think equity is just a policy question. <span class="highlight">I think it's an engineering problem, and I want to work on it.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="grid-bg-green">
+  <div class="section-inner">
+    <div class="section-label fade-in">// primary research</div>
+    <h2 class="section-title fade-in">Project Lab</h2>
+    <div class="section-divider fade-in"></div>
+    <div class="projects-grid">
+
+      <!-- DRONE SWARM -->
+      <div class="project-card fade-in">
+        <div class="proj-icon">🚁</div>
+        <div class="proj-title">Adaptive Image Compression for Bandwidth-Constrained UAVs</div>
+        <span class="proj-status review">Under Peer Review</span>
+        <p class="proj-desc">
+          Developed a dynamic JPEG compression framework that adjusts quality levels based on real-time Round-Trip Time (RTT) measurements. The system targets drone swarms relaying imagery in areas with no infrastructure — disaster zones, mountain rescues, rural medicine drops — where standard fixed-quality approaches fail under congestion.
+        </p>
+        <p class="proj-desc" style="margin-top:-0.4rem;">
+          Statistical validation using mixed-effects modeling confirmed a latency reduction ranging from 41% to 83% under degraded network conditions (p &lt; 0.001). Hardware-tested on Raspberry Pi 5 using Linux Traffic Control (tc) to simulate real congestion scenarios.
+        </p>
+
+        <div class="graph-placeholder">
+          <span style="font-size:1.6rem;opacity:0.25;">📈</span>
+          <div class="graph-label">[ Add graph: Latency vs. Network Quality from manuscript ]</div>
+        </div>
+
+        <div class="challenge-box">
+          <div class="challenge-label">// challenges &amp; tradeoffs</div>
+          <div class="challenge-text">My first controller had no hysteresis. Under real congestion it oscillated between quality levels every few hundred milliseconds, making latency worse rather than better. I spent a week convinced the Raspberry Pi was defective before realizing the feedback loop itself was the problem. Adding a dead zone to prevent rapid re-triggering fixed it — but at the cost of slightly delayed reactions to network changes. That tradeoff is documented in the manuscript.</div>
+        </div>
+
+        <div class="stack-row">
+          <span class="badge">Python</span>
+          <span class="badge">Raspberry Pi 5</span>
+          <span class="badge">Linux tc</span>
+          <span class="badge">Mixed-Effects Modeling</span>
+          <span class="badge">TCP/IP</span>
+          <span class="badge">RTT Analysis</span>
+        </div>
+        <a href="https://github.com/jtanay46" target="_blank" class="proj-link">↗ github.com/jtanay46</a>
+      </div>
+
+      <!-- LIFI-WIFI -->
+      <div class="project-card green fade-in">
+        <div class="proj-icon green">📡</div>
+        <div class="proj-title">Hybrid LiFi-WiFi: Latency Optimization in Low-Density Networks</div>
+        <span class="proj-status pub">Published · NHSJS 2026</span>
+        <p class="proj-desc">
+          Addressed a gap in connectivity research: most WiFi studies focus on dense urban deployments. In low-density settings (1–5 users), WiFi congestion behaves differently, and LiFi's signal confinement becomes a practical security and performance advantage.
+        </p>
+        <p class="proj-desc" style="margin-top:-0.4rem;">
+          Engineered hardware switching logic using an MCP3008 ADC and photodiode on the Raspberry Pi 5 (SPI interface via MOSI/MISO pins 19, 21, 23, 24). The system prioritizes LiFi when ambient light exceeds 1.65V. WiFi held a 20ms baseline; LiFi showed a 10% improvement in high-brightness conditions, with validated signal confinement as a physical-layer security benefit.
+        </p>
+
+        <div class="challenge-box green">
+          <div class="challenge-label green">// challenges &amp; tradeoffs</div>
+          <div class="challenge-text">I initially assumed LiFi would outperform WiFi broadly — the theory supports it. But hardware disagreed. Ambient light from a room lamp was contaminating the photodiode readings and spiking latency measurements. Three days of shielding experiments were needed to isolate the signal. The lesson: theoretical performance and physical hardware performance are genuinely different problems. The paper is honest about that gap.</div>
+        </div>
+
+        <div class="stack-row">
+          <span class="badge green">Raspberry Pi 5</span>
+          <span class="badge green">MCP3008 ADC</span>
+          <span class="badge green">SPI Interface</span>
+          <span class="badge green">OOK Modulation</span>
+          <span class="badge green">VLC</span>
+          <span class="badge green">Python</span>
+          <span class="badge green">Statistical Analysis</span>
+        </div>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center;margin-top:0.5rem;">
+          <a href="https://nhsjs.com/2026/reducing-latency-in-low-density-user-environments-with-a-hybrid-lifi-wifi-model-a-simulation-based-hardware-validation/" target="_blank" class="proj-link green" style="font-weight:700;">📄 Read Published Paper ↗</a>
+          <a href="https://github.com/jtanay46" target="_blank" class="proj-link green" style="opacity:0.55;">github.com/jtanay46 ↗</a>
+        </div>
+      </div>
+
+      <!-- INFO DIET -->
+      <div class="project-card fade-in">
+        <div class="proj-icon">🛡️</div>
+        <div class="proj-title">Information Diet — Browser-Side AI Media Auditing Tool</div>
+        <span class="proj-status review">In Development</span>
+        <p class="proj-desc">
+          An AI-powered tool that helps users audit their own media consumption and flag synthetic or misleading content. Optimized for browser-side inference using TensorFlow.js so all analysis runs locally — no data leaves the device, ensuring 100% user privacy. Built on the idea that critical thinking is a skill you can engineer for.
+        </p>
+        <div class="stack-row">
+          <span class="badge">JavaScript</span>
+          <span class="badge">React</span>
+          <span class="badge">TensorFlow.js</span>
+          <span class="badge">Browser Inference</span>
+          <span class="badge">Vite</span>
+        </div>
+        <a href="https://github.com/jtanay46" target="_blank" class="proj-link">↗ github.com/jtanay46</a>
+      </div>
+
+      <!-- MYSHOWBUCKS -->
+      <div class="project-card green fade-in">
+        <div class="proj-icon green">🎭</div>
+        <div class="proj-title">MyShowBucks — Financial Platform for Nonprofit Theater</div>
+        <span class="proj-status live">Live · myshowbucks.com</span>
+        <p class="proj-desc">
+          Founded and built a budget management platform now managing financial workflows for a nonprofit theater company. The centralized MVC architecture replaced a spreadsheet-and-email system, reducing administrative overhead by around 75%. Built iteratively with the theater managers — they told me what was broken, I fixed it, repeat.
+        </p>
+        <div class="stack-row">
+          <span class="badge green">Ruby on Rails</span>
+          <span class="badge green">React</span>
+          <span class="badge green">SQLite → MongoDB</span>
+          <span class="badge green">MVC Architecture</span>
+        </div>
+        <a href="https://myshowbucks.com" target="_blank" class="proj-link green">↗ myshowbucks.com</a>
+      </div>
+
+      <!-- SAT -->
+      <div class="project-card fade-in">
+        <div class="proj-icon">🎓</div>
+        <div class="proj-title">S.A.T. — Peer-to-Peer Tutoring Platform</div>
+        <span class="proj-status live" style="background:rgba(57,255,20,0.1);color:var(--green);border-color:rgba(57,255,20,0.25);">🏆 1st Place · Accelerated Career Awareness Program 2025</span>
+        <p class="proj-desc">
+          Designed, built, and presented the entire platform as sole technical architect — from database schema to the live judge demo. Connects under-resourced students with peer tutors in real time. The students most likely to need help are also least likely to have a private tutor at home; this was built for them.
+        </p>
+        <div style="margin-bottom:1rem;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--blue);margin-bottom:0.45rem;">KEY CONTRIBUTIONS</div>
+          <ul style="font-size:0.82rem;color:#7a8599;line-height:1.8;list-style:none;">
+            <li>→ End-to-end product architecture &amp; UX design</li>
+            <li>→ Real-time peer tutoring session management</li>
+            <li>→ Live judge demo &amp; product narrative presentation</li>
+          </ul>
+        </div>
+        <div class="stack-row">
+          <span class="badge">React</span>
+          <span class="badge">Firebase</span>
+          <span class="badge">JavaScript</span>
+          <span class="badge">Full-Stack</span>
+        </div>
+        <a href="https://github.com/jtanay46" target="_blank" class="proj-link">↗ github.com/jtanay46</a>
+      </div>
+
+      <!-- DROPSHIPPERS -->
+      <div class="project-card green fade-in">
+        <div class="proj-icon green">🏔️</div>
+        <div class="proj-title">The Dropshippers — Himalayan Last-Mile Medical Drone</div>
+        <span class="proj-status live">🥈 2nd Place · Rice STEM Young Scholars 2024</span>
+        <p class="proj-desc">
+          Selected as 1 of 100 students for Rice University's STEM Young Scholars workshop. Led hardware design of an autonomous supply system for temperature-sensitive Rheumatoid Arthritis medication across a 200-mile Himalayan route. The core challenge: vibration at altitude degrades drug potency. Solution: a payload chamber using carbon fiber, EVA foam, and rubberized damping with triangular structural geometry to neutralize resonance frequencies.
+        </p>
+        <div class="stack-row">
+          <span class="badge green">CAD / SolidWorks</span>
+          <span class="badge green">Structural Engineering</span>
+          <span class="badge green">Thermal Systems</span>
+          <span class="badge green">Vibration Dampening</span>
+        </div>
+        <a href="https://github.com/jtanay46" target="_blank" class="proj-link green">↗ github.com/jtanay46</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH REPOSITORY -->
+<section id="media" style="background:#0d0f14;border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="section-inner">
+    <div class="section-label fade-in">// research repository</div>
+    <h2 class="section-title fade-in">Papers, Decks &amp; Media</h2>
+    <div class="section-divider fade-in"></div>
+    <div class="media-grid">
+
+      <!-- Info Diet YouTube -->
+      <div class="project-card fade-in" style="padding:0;overflow:hidden;">
+        <div class="embed-wrap">
+          <iframe src="https://www.youtube.com/embed/Vwh-7L4skL4" title="Information Diet — Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <!-- TO CHANGE: replace "Vwh-7L4skL4" with your YouTube video ID -->
+        </div>
+        <div style="padding:1rem 1.2rem;">
+          <div class="proj-title" style="font-size:0.86rem;">Demo — Information Diet</div>
+          <div class="proj-desc" style="font-size:0.76rem;margin-top:0.25rem;">Browser-side AI media auditing tool · live product walkthrough</div>
+        </div>
+      </div>
+
+      <!-- LiFi Paper -->
+      <div class="repo-card green fade-in">
+        <div class="repo-icon">📄</div>
+        <div>
+          <div class="repo-title">Hybrid LiFi-WiFi Latency Paper</div>
+          <div class="repo-meta">NHSJS · 2026 · Peer Reviewed · Published</div>
+        </div>
+        <div class="repo-desc">
+          <em>Reducing Latency in Low-Density User Environments with a Hybrid LiFi-WiFi Model: A Simulation-Based Hardware Validation.</em>
+          MCP3008 ADC switching logic, SPI hardware, statistical latency analysis across user density ranges 1–5.
+        </div>
+        <a href="https://nhsjs.com/2026/reducing-latency-in-low-density-user-environments-with-a-hybrid-lifi-wifi-model-a-simulation-based-hardware-validation/" target="_blank" class="btn btn-green" style="width:fit-content;">📖 Read Full Paper ↗</a>
+      </div>
+
+      <!-- Drone Paper -->
+      <div class="repo-card fade-in">
+        <div class="repo-icon">📄</div>
+        <div>
+          <div class="repo-title">Adaptive Drone Compression Manuscript</div>
+          <div class="repo-meta">Under Peer Review · Link added upon publication</div>
+        </div>
+        <div class="repo-desc">
+          <em>Adaptive Image Compression for Bandwidth-Constrained UAV Communication Networks.</em>
+          RTT-based JPEG quality control, mixed-effects statistical modeling, 41–83% latency reduction (p &lt; 0.001).
+        </div>
+        <div style="display:inline-flex;align-items:center;gap:0.5rem;font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--blue);background:rgba(0,212,255,0.07);border:1px solid rgba(0,212,255,0.2);border-radius:4px;padding:0.28rem 0.75rem;">
+          <span style="width:6px;height:6px;background:var(--blue);border-radius:50%;animation:pulse-green 2s infinite;"></span>
+          Under Review
+        </div>
+        <!-- TO ACTIVATE when published: uncomment and add URL -->
+        <!-- <a href="#" target="_blank" class="btn btn-blue" style="width:fit-content;">📖 Read Full Paper ↗</a> -->
+      </div>
+
+      <!-- Info Diet Project Board -->
+      <div class="repo-card fade-in">
+        <div class="repo-icon">📋</div>
+        <div>
+          <div class="repo-title">Information Diet — Project Board</div>
+          <div class="repo-meta">Development Tracker · Feature Backlog · Milestones</div>
+        </div>
+        <div class="repo-desc">Live project board tracking sprint progress and open research questions for the browser-side AI ethics tool.</div>
+        <a href="https://pdflink.to/806dc4c0/" target="_blank" class="btn btn-blue" style="width:fit-content;">🗂 View Board ↗</a>
+      </div>
+
+      <!-- SAT Pitch Deck -->
+      <div class="project-card fade-in" style="padding:0;overflow:hidden;">
+        <div class="embed-wrap-tall">
+          <!-- S.A.T. DECK EMBEDDED BELOW -->
+          <!-- TO SWAP: Google Slides → File → Share → Publish to web → Embed → copy src -->
+          <!-- Or Google Drive PDF: https://drive.google.com/file/d/FILE_ID/preview -->
+          <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" src="https://pdflink.to/46db7669/" allowfullscreen></iframe>
+        </div>
+        <div style="padding:1rem 1.2rem;">
+          <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.3rem;">
+            <span>📊</span>
+            <div class="proj-title" style="font-size:0.86rem;">S.A.T. — ACAP 1st Place Pitch Deck</div>
+          </div>
+          <div class="proj-desc" style="font-size:0.76rem;margin-top:0.1rem;">Accelerated Career Awareness Program 2025 · full presentation</div>
+        </div>
+      </div>
+
+      <!-- Dropshippers Deck -->
+      <div class="project-card green fade-in" style="padding:0;overflow:hidden;">
+        <div class="embed-wrap-tall">
+          <!-- DROPSHIPPERS DECK EMBEDDED BELOW -->
+          <!-- TO SWAP: same instructions as above -->
+          <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" src="https://pdflink.to/0a2b4e34/" allowfullscreen></iframe>
+        </div>
+        <div style="padding:1rem 1.2rem;">
+          <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.3rem;">
+            <span>📊</span>
+            <div class="proj-title" style="font-size:0.86rem;">The Dropshippers — Himalayan Drone Deck</div>
+          </div>
+          <div class="proj-desc" style="font-size:0.76rem;margin-top:0.1rem;">Rice STEM Young Scholars 2025 · 2nd Place presentation</div>
+        </div>
+      </div>
+
+      <!-- MyShowBucks -->
+      <div class="repo-card green fade-in">
+        <div class="repo-icon">🎭</div>
+        <div>
+          <div class="repo-title">MyShowBucks — Live Production App</div>
+          <div class="repo-meta">Ruby on Rails · React · myshowbucks.com</div>
+        </div>
+        <div class="repo-desc">Full-stack nonprofit budget platform in active production use. Centralized MVC architecture replaced the theater company's spreadsheet workflow.</div>
+        <a href="https://myshowbucks.com" target="_blank" class="btn btn-green" style="width:fit-content;">🚀 Visit Live App ↗</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TECHNICAL STACK -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-label fade-in">// technical stack</div>
+    <h2 class="section-title fade-in">Languages, Tools &amp; Concepts</h2>
+    <div class="section-divider fade-in"></div>
+    <div class="skills-cols">
+
+      <div class="fade-in">
+        <div class="skill-group-title">Languages</div>
+        <div class="skill-tag-grid">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">Ruby</span>
+          <span class="skill-tag">HTML / CSS</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">Bash / Shell</span>
+        </div>
+      </div>
+
+      <div class="fade-in">
+        <div class="skill-group-title">Frameworks &amp; Platforms</div>
+        <div class="skill-tag-grid">
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">Ruby on Rails</span>
+          <span class="skill-tag">Firebase</span>
+          <span class="skill-tag">Vite</span>
+          <span class="skill-tag">TensorFlow.js</span>
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">SQLite</span>
+          <span class="skill-tag">MongoDB</span>
+        </div>
+      </div>
+
+      <div class="fade-in">
+        <div class="skill-group-title">Hardware &amp; Systems</div>
+        <div class="skill-tag-grid">
+          <span class="skill-tag">Raspberry Pi 5</span>
+          <span class="skill-tag">SPI / I2C</span>
+          <span class="skill-tag">MCP3008 ADC</span>
+          <span class="skill-tag">Linux tc</span>
+          <span class="skill-tag">Photodiode Arrays</span>
+          <span class="skill-tag">CAD / SolidWorks</span>
+          <span class="skill-tag">Distributed Systems</span>
+        </div>
+      </div>
+
+      <div class="fade-in">
+        <div class="skill-group-title green">Research &amp; Analysis</div>
+        <div class="skill-tag-grid">
+          <span class="skill-tag green">Mixed-Effects Modeling</span>
+          <span class="skill-tag green">RTT Analysis</span>
+          <span class="skill-tag green">Statistical Hypothesis Testing</span>
+          <span class="skill-tag green">AP Statistics</span>
+          <span class="skill-tag green">Peer Review Process</span>
+          <span class="skill-tag green">Technical Writing</span>
+        </div>
+      </div>
+
+      <div class="fade-in">
+        <div class="skill-group-title amber">Core Concepts</div>
+        <div class="skill-tag-grid">
+          <span class="skill-tag amber">OOK Modulation</span>
+          <span class="skill-tag amber">VLC (Visible Light Comm.)</span>
+          <span class="skill-tag amber">Signal-to-Noise Ratio (SNR)</span>
+          <span class="skill-tag amber">TCP/IP Networking</span>
+          <span class="skill-tag amber">Adaptive Compression</span>
+          <span class="skill-tag amber">MVC Architecture</span>
+          <span class="skill-tag amber">Object-Oriented Design</span>
+          <span class="skill-tag amber">Browser-Side AI Inference</span>
+        </div>
+      </div>
+
+      <div class="fade-in">
+        <div class="skill-group-title">Leadership &amp; Other</div>
+        <div class="skill-tag-grid">
+          <span class="skill-tag">DECA State Champion</span>
+          <span class="skill-tag">Product Demo / Pitch</span>
+          <span class="skill-tag">Nonprofit Development</span>
+          <span class="skill-tag">UI/UX Iteration</span>
+          <span class="skill-tag">Competitive Tennis</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HONORS -->
+<section id="honors" class="grid-bg">
+  <div class="section-inner">
+    <div class="section-label fade-in">// achievements</div>
+    <h2 class="section-title fade-in">Honors &amp; Awards</h2>
+    <div class="section-divider fade-in"></div>
+    <div class="honor-grid">
+      <div class="honor-item fade-in"><span class="honor-sym">★</span><div class="honor-text"><strong>Texas DECA State Finalist — 1st Place</strong> · Qualified for ICDC International (2026)</div></div>
+      <div class="honor-item fade-in"><span class="honor-sym">★</span><div class="honor-text"><strong>Gold Presidential Volunteer Service Award</strong> · AmeriCorps (2024)</div></div>
+      <div class="honor-item fade-in"><span class="honor-sym">★</span><div class="honor-text"><strong>College Board National Recognition Program</strong> · Awardee (2025)</div></div>
+      <div class="honor-item fade-in"><span class="honor-sym">★</span><div class="honor-text"><strong>District 4 DECA Champion</strong> · Marketing &amp; Tourism · State Qualifier ×2 (2025, 2026)</div></div>
+      <div class="honor-item fade-in"><span class="honor-sym">★</span><div class="honor-text"><strong>Rice University STEM Young Scholars</strong> · Top 100 · 2nd Place Overall — The Dropshippers (2024)</div></div>
+      <div class="honor-item fade-in"><span class="honor-sym">★</span><div class="honor-text"><strong>UH ACAP — 1st Place</strong> · Entrepreneurship Competition (2025)</div></div>
+      <div class="honor-item fade-in"><span class="honor-sym">★</span><div class="honor-text"><strong>Education for Tomorrow Alliance Science Fair</strong> · 3rd Place Systems Software (2026)</div></div>
+      <div class="honor-item fade-in"><span class="honor-sym">★</span><div class="honor-text"><strong>TWHS Tennis Team</strong> · 10+ medals · Part of State Championship Team (2023–Present)</div></div>
+      <div class="honor-item fade-in"><span class="honor-sym">★</span><div class="honor-text"><strong>Published Researcher</strong> · National High School Journal of Science · Peer-Reviewed (2026)</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-name">Tanay Joshi</div>
+      <div class="footer-sub">ECE Researcher · The Woodlands, TX · Class of 2027</div>
+    </div>
+    <div class="contact-list">
+      <a class="contact-chip" onclick="copyEmail()" style="cursor:pointer;"><span>✉</span> jtanay46@gmail.com</a>
+      <span id="copyFeedback" class="copy-feedback">Copied!</span>
+      <a class="contact-chip" href="tel:8323224092"><span>📞</span> 832-322-4092</a>
+      <a class="contact-chip" href="https://linkedin.com/in/tanay-joshi-6a8a83380" target="_blank"><span>in</span> LinkedIn</a>
+      <a class="contact-chip" href="https://github.com/jtanay46" target="_blank"><span>⌥</span> GitHub</a>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:2rem;font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:#2a3040;">
+    © 2026 Tanay Joshi · Built with precision · Engineering for equity
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  function copyEmail() {
+    navigator.clipboard.writeText('jtanay46@gmail.com').then(() => {
+      const fb = document.getElementById('copyFeedback');
+      fb.style.display = 'block';
+      setTimeout(() => { fb.style.display = 'none'; }, 2000);
+    });
+  }
+
+  function handleNavResize() {
+    document.querySelector('.nav-links').style.display = window.innerWidth < 640 ? 'none' : 'flex';
+  }
+  window.addEventListener('resize', handleNavResize);
+  handleNavResize();
+
+  const hero = document.getElementById('hero');
+  hero.addEventListener('mousemove', (e) => {
+    const dot = document.createElement('div');
+    dot.style.cssText = `position:fixed;left:${e.clientX}px;top:${e.clientY}px;width:4px;height:4px;border-radius:50%;background:rgba(0,212,255,0.4);pointer-events:none;z-index:9999;transition:opacity 0.6s;`;
+    document.body.appendChild(dot);
+    setTimeout(() => { dot.style.opacity = '0'; }, 100);
+    setTimeout(() => dot.remove(), 700);
+  });
+</script>
+</body>
+</html>
