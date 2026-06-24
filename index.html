@@ -252,6 +252,20 @@
   ::-webkit-scrollbar-thumb { background: rgba(0,212,255,0.25); border-radius: 3px; }
   .fade-in { opacity: 0; transform: translateY(22px); transition: opacity 0.6s ease, transform 0.6s ease; }
   .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── NEW: Patent / Amber card styles ── */
+  .project-card.amber { border-color: rgba(255,183,0,0.18); }
+  .project-card.amber:hover { border-color: rgba(255,183,0,0.6); box-shadow: 0 0 32px rgba(255,183,0,0.2), 0 8px 32px rgba(0,0,0,0.4); transform: translateY(-3px); }
+  .project-card.amber::after { background: linear-gradient(90deg, #ffb700, transparent); }
+  .proj-icon.amber { filter: drop-shadow(0 0 8px rgba(255,183,0,0.7)); }
+  .proj-status.patent { background: rgba(255,183,0,0.12); color: #ffb700; border: 1px solid rgba(255,183,0,0.4); font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; padding: 0.2rem 0.6rem; border-radius: 3px; display: inline-block; }
+  .patent-banner { background: linear-gradient(135deg, rgba(255,183,0,0.08), rgba(255,140,0,0.04)); border: 1px solid rgba(255,183,0,0.3); border-left: 4px solid #ffb700; border-radius: 0 8px 8px 0; padding: 1rem 1.2rem; margin-bottom: 1.1rem; }
+  .patent-banner-label { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: #ffb700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.4rem; }
+  .patent-banner-title { font-size: 0.78rem; color: #c9a84c; line-height: 1.55; font-style: italic; }
+  .patent-meta-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+  .patent-meta-chip { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; padding: 0.22rem 0.65rem; border-radius: 4px; background: rgba(255,183,0,0.07); color: #b8933a; border: 1px solid rgba(255,183,0,0.22); }
+  .badge.amber { background: rgba(255,183,0,0.07); color: #b8933a; border-color: rgba(255,183,0,0.22); }
+  .proj-link.amber { color: #ffb700; }
 </style>
 </head>
 <body class="grid-bg">
@@ -285,7 +299,8 @@
         <span class="accent-green">internet doesn't reach.</span>
       </h1>
       <p class="hero-sub">
-        <strong>Tanay Joshi</strong> — Published ECE Researcher · IEEE Guest Speaker · Distributed Systems &amp; Networking · 2nd Place Rice STEM Innovator · 1st Place ACAP Entrepreneur
+        <strong>Tanay Joshi</strong> — ECE Researcher · IEEE Guest Speaker · Patent-Pending Innovator<br/>
+        2nd Place Rice STEM Innovator · 1st Place ACAP Entrepreneur · 2× Published Researcher
       </p>
       <div style="display:flex;gap:0.8rem;flex-wrap:wrap;">
         <a href="#mission" class="btn btn-blue">⬡ Read My Philosophy</a>
@@ -334,11 +349,11 @@
     <div class="section-divider fade-in"></div>
     <div class="projects-grid">
 
-      <!-- DRONE SWARM - UPDATED -->
+      <!-- DRONE SWARM -->
       <div class="project-card fade-in">
         <div class="proj-icon">🚁</div>
         <div class="proj-title">Adaptive Image Compression for Bandwidth-Constrained UAVs</div>
-        <span class="proj-status pub">Published · NHSJS 2026</span>
+        <span class="proj-status pub">Published · NHSJS 2026</span> <span class="proj-status patent">⚙️ Patent Pending · USPTO 2026</span>
         <p class="proj-desc">
           Developed a dynamic JPEG compression framework that adjusts quality levels based on real-time Round-Trip Time (RTT) measurements. The system targets drone swarms relaying imagery in areas with no infrastructure — disaster zones, mountain rescues, rural medicine drops — where standard fixed-quality approaches fail under congestion.
         </p>
@@ -370,7 +385,56 @@
         </div>
       </div>
 
-      <!-- LIFI-WIFI (unchanged) -->
+      <!-- PATENT PENDING CARD -->
+      <div class="project-card amber fade-in">
+        <div class="proj-icon amber">⚙️</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.58rem;color:#ffb700;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.4rem;">United States Patent &amp; Trademark Office · Provisional Application</div>
+        <div class="proj-title">Asymmetric Ratcheting Compression Controller</div>
+        <span class="proj-status patent">🔐 PATENT PENDING · Filed May 23, 2026</span>
+        <div class="patent-banner" style="margin-top:0.8rem;">
+          <div class="patent-banner-label">Official Title of Invention</div>
+          <div class="patent-banner-title">Asymmetric Ratcheting Compression Controller with Proportional Hysteresis for Adaptive Media Payload Quality Management in Bandwidth-Constrained Multi-Node Wireless Transmission Systems</div>
+        </div>
+        <div class="patent-meta-row">
+          <span class="patent-meta-chip">Inventor: Tanay B. Joshi</span>
+          <span class="patent-meta-chip">Filed: May 23, 2026</span>
+          <span class="patent-meta-chip">Micro Entity — Student Inventor</span>
+          <span class="patent-meta-chip">Application #: Pending Issuance</span>
+        </div>
+        <p class="proj-desc">
+          A novel application-layer compression control method solving the <strong style="color:#c9a84c;">bandwidth saturation cliff</strong> in multi-node wireless networks. The controller reduces compression fidelity aggressively upon congestion and recovers it conservatively — an asymmetric ratcheting effect that biases the system toward bandwidth preservation. A proportional hysteresis deadband prevents oscillation at threshold boundaries.
+        </p>
+        <p class="proj-desc" style="margin-top:-0.4rem;">
+          Empirical validation across 50 trials: <strong style="color:#c9a84c;">83% latency reduction</strong> vs. static compression (0.926s vs. 5.468s). Zero oscillation events. r = −0.668, p &lt; 0.001. Covers UAV swarms, FANETs, mobile robotics, satellite uplinks, edge AI nodes, IoT sensor swarms, and disaster-response mesh systems.
+        </p>
+        <div style="background:rgba(255,183,0,0.04);border:1px solid rgba(255,183,0,0.15);border-radius:6px;padding:0.9rem 1.1rem;margin-bottom:1.1rem;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:#ffb700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.6rem;">11 Patent Claims Covering</div>
+          <div style="display:flex;flex-wrap:wrap;gap:0.4rem;">
+            <span class="patent-meta-chip">Asymmetric Ratcheting Method</span>
+            <span class="patent-meta-chip">Proportional Hysteresis Module</span>
+            <span class="patent-meta-chip">EWMA Congestion Smoothing</span>
+            <span class="patent-meta-chip">RTT-Based Detection</span>
+            <span class="patent-meta-chip">Composite Metric Scoring</span>
+            <span class="patent-meta-chip">JPEG · Video · LiDAR · Sensor Payloads</span>
+            <span class="patent-meta-chip">Multi-Node Swarm Architecture</span>
+          </div>
+        </div>
+        <div class="stack-row">
+          <span class="badge amber">Adaptive Compression</span>
+          <span class="badge amber">EWMA Smoothing</span>
+          <span class="badge amber">RTT Analysis</span>
+          <span class="badge amber">UAV Swarm Networks</span>
+          <span class="badge amber">FANETs</span>
+          <span class="badge amber">Edge AI</span>
+          <span class="badge amber">Disaster-Response Mesh</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+          <a href="https://nhsjs.com/2026/adaptive-image-compression-and-transmission-optimization-for-bandwidth-constrained-uav-communications-an-emulation-based-evaluation/" target="_blank" class="proj-link amber" style="font-weight:700;">📄 Related Published Paper ↗</a>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:0.67rem;color:#4a5468;">Application # added upon USPTO issuance</span>
+        </div>
+      </div>
+
+      <!-- LIFI-WIFI -->
       <div class="project-card green fade-in">
         <div class="proj-icon green">📡</div>
         <div class="proj-title">Hybrid LiFi-WiFi: Latency Optimization in Low-Density Networks</div>
@@ -402,7 +466,7 @@
         </div>
       </div>
 
-      <!-- INFO DIET (unchanged) -->
+      <!-- INFO DIET -->
       <div class="project-card fade-in">
         <div class="proj-icon">🛡️</div>
         <div class="proj-title">Information Diet — Browser-Side AI Media Auditing Tool</div>
@@ -420,7 +484,7 @@
         <a href="https://github.com/jtanay46" target="_blank" class="proj-link">↗ github.com/jtanay46</a>
       </div>
 
-      <!-- MYSHOWBUCKS (unchanged) -->
+      <!-- MYSHOWBUCKS -->
       <div class="project-card green fade-in">
         <div class="proj-icon green">🎭</div>
         <div class="proj-title">MyShowBucks — Financial Platform for Nonprofit Theater</div>
@@ -437,7 +501,7 @@
         <a href="https://myshowbucks.com" target="_blank" class="proj-link green">↗ myshowbucks.com</a>
       </div>
 
-      <!-- SAT (unchanged) -->
+      <!-- SAT -->
       <div class="project-card fade-in">
         <div class="proj-icon">🎓</div>
         <div class="proj-title">S.A.T. — Peer-to-Peer Tutoring Platform</div>
@@ -462,7 +526,7 @@
         <a href="https://github.com/jtanay46" target="_blank" class="proj-link">↗ github.com/jtanay46</a>
       </div>
 
-      <!-- DROPSHIPPERS (unchanged) -->
+      <!-- DROPSHIPPERS -->
       <div class="project-card green fade-in">
         <div class="proj-icon green">🏔️</div>
         <div class="proj-title">The Dropshippers — Himalayan Last-Mile Medical Drone</div>
@@ -491,7 +555,7 @@
     <div class="section-divider fade-in"></div>
     <div class="media-grid">
 
-      <!-- Info Diet YouTube (unchanged) -->
+      <!-- Info Diet YouTube -->
       <div class="project-card fade-in" style="padding:0;overflow:hidden;">
         <div class="embed-wrap">
           <iframe src="https://www.youtube.com/embed/Vwh-7L4skL4" title="Information Diet — Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -502,7 +566,7 @@
         </div>
       </div>
 
-      <!-- LiFi Paper (unchanged) -->
+      <!-- LiFi Paper -->
       <div class="repo-card green fade-in">
         <div class="repo-icon">📄</div>
         <div>
@@ -516,7 +580,7 @@
         <a href="https://nhsjs.com/2026/reducing-latency-in-low-density-user-environments-with-a-hybrid-lifi-wifi-model-a-simulation-based-hardware-validation/" target="_blank" class="btn btn-green" style="width:fit-content;">📖 Read Full Paper ↗</a>
       </div>
 
-      <!-- Drone Paper - UPDATED -->
+      <!-- Drone Paper -->
       <div class="repo-card fade-in">
         <div class="repo-icon">📄</div>
         <div>
@@ -524,12 +588,13 @@
           <div class="repo-meta">NHSJS · 2026 · Peer Reviewed · Published</div>
         </div>
         <div class="repo-desc">
-          <em>Adaptive Image Compression and Transmission Optimization for Bandwidth-Constrained UAV Communications: An Emulation-Based Evaluation.</em>
+          <em>Adaptive Image Compression and Transmission Optimization for Bandwidth-Constrained UAV Communications: An Emulation-Based Evaluation.</em><br/>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:#ffb700;margin-top:0.4rem;display:inline-block;">⚙️ Patent Pending · USPTO Provisional Filed 5/23/2026</span>
         </div>
         <a href="https://nhsjs.com/2026/adaptive-image-compression-and-transmission-optimization-for-bandwidth-constrained-uav-communications-an-emulation-based-evaluation/" target="_blank" class="btn btn-blue" style="width:fit-content;">📖 Read Full Paper ↗</a>
       </div>
 
-      <!-- Info Diet Project Board (unchanged) -->
+      <!-- Info Diet Project Board -->
       <div class="repo-card fade-in">
         <div class="repo-icon">📋</div>
         <div>
@@ -551,10 +616,14 @@
         </div>
       </div>
 
-      <!-- YouTube Talk Placeholder -->
+      <!-- IEEE Guest Speaker Talk — Video Placeholder -->
       <div class="project-card fade-in" style="padding:0;overflow:hidden;">
-        <div class="embed-wrap">
-          <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="IEEE Guest Speaker Talk" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div style="position:relative;padding-bottom:56.25%;background:#080a0d;border-radius:10px 10px 0 0;overflow:hidden;">
+          <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;">
+            <div style="font-size:2.5rem;opacity:0.2;">🎥</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:0.66rem;color:rgba(0,212,255,0.3);letter-spacing:0.1em;">VIDEO COMING SOON</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:0.55rem;color:#2a3040;margin-top:0.2rem;">Replace src with YouTube embed URL when ready</div>
+          </div>
         </div>
         <div style="padding:1rem 1.2rem;">
           <div class="proj-title" style="font-size:0.86rem;">IEEE Guest Speaker Talk</div>
@@ -562,7 +631,39 @@
         </div>
       </div>
 
-      <!-- SAT Pitch Deck (unchanged) -->
+      <!-- Hybrid LiFi–WiFi Presentation PDF -->
+      <div class="project-card green fade-in" style="padding:0;overflow:hidden;">
+        <div class="embed-wrap-tall">
+          <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" src="Hybrid LiFi–WiFi Presentation.pdf" allowfullscreen></iframe>
+        </div>
+        <div style="padding:1rem 1.2rem;">
+          <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.3rem;">
+            <span>📊</span>
+            <div class="proj-title" style="font-size:0.86rem;">Hybrid LiFi–WiFi — Full Presentation Deck</div>
+          </div>
+          <div class="proj-desc" style="font-size:0.76rem;margin-top:0.1rem;">NHSJS 2026 · Peer-Reviewed · Hardware validation using MCP3008 ADC &amp; SPI switching logic</div>
+        </div>
+      </div>
+
+      <!-- UT Austin CS Academy — Video Placeholder -->
+      <div class="project-card fade-in" style="padding:0;overflow:hidden;">
+        <div style="position:relative;padding-bottom:56.25%;background:#080a0d;border-radius:10px 10px 0 0;overflow:hidden;">
+          <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;">
+            <div style="font-size:2.5rem;opacity:0.2;">🎥</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:0.66rem;color:rgba(57,255,20,0.25);letter-spacing:0.1em;">VIDEO COMING SOON</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:0.55rem;color:#2a3040;margin-top:0.2rem;">Replace src with YouTube embed URL when ready</div>
+          </div>
+        </div>
+        <div style="padding:1rem 1.2rem;">
+          <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.4rem;flex-wrap:wrap;">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;background:rgba(57,255,20,0.1);color:var(--green);border:1px solid rgba(57,255,20,0.25);padding:0.15rem 0.55rem;border-radius:3px;">🏆 Best Light Show &amp; Sync Award</span>
+          </div>
+          <div class="proj-title" style="font-size:0.86rem;">UT Austin CS Academy — Arduino Light Show</div>
+          <div class="proj-desc" style="font-size:0.76rem;margin-top:0.25rem;">C++ firmware on Arduino microcontrollers · high-precision LED array synchronization to multi-track audio · Team Lead Programmer &amp; Spokesperson</div>
+        </div>
+      </div>
+
+      <!-- SAT Pitch Deck -->
       <div class="project-card fade-in" style="padding:0;overflow:hidden;">
         <div class="embed-wrap-tall">
 <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" src="Copy of S.A.T App.pdf" allowfullscreen></iframe>        </div>
@@ -575,7 +676,7 @@
         </div>
       </div>
 
-      <!-- Dropshippers Deck (unchanged) -->
+      <!-- Dropshippers Deck -->
       <div class="project-card green fade-in" style="padding:0;overflow:hidden;">
         <div class="embed-wrap-tall">
 <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" src="The Dropshippers - T4.pdf" allowfullscreen></iframe>        </div>
@@ -588,7 +689,7 @@
         </div>
       </div>
 
-      <!-- MyShowBucks (unchanged) -->
+      <!-- MyShowBucks -->
       <div class="repo-card green fade-in">
         <div class="repo-icon">🎭</div>
         <div>
@@ -699,6 +800,8 @@
     <h2 class="section-title fade-in">Honors &amp; Awards</h2>
     <div class="section-divider fade-in"></div>
     <div class="honor-grid">
+      <div class="honor-item fade-in" style="border-color:rgba(255,183,0,0.3);background:rgba(255,183,0,0.03);"><span class="honor-sym" style="color:#ffb700;">★</span><div class="honor-text"><strong style="color:#c9a84c;">USPTO Patent Pending</strong> · Asymmetric Ratcheting Compression Controller · Student Inventor · Filed May 2026</div></div>
+      <div class="honor-item fade-in"><span class="honor-sym">★</span><div class="honor-text"><strong>UT Austin CS Academy — Best Light Show &amp; Synchronization Award</strong> (2026)</div></div>
       <div class="honor-item fade-in"><span class="honor-sym">★</span><div class="honor-text"><strong>Texas DECA State Finalist — 1st Place</strong> · Qualified for ICDC International (2026)</div></div>
       <div class="honor-item fade-in"><span class="honor-sym">★</span><div class="honor-text"><strong>Gold Presidential Volunteer Service Award</strong> · AmeriCorps (2024)</div></div>
       <div class="honor-item fade-in"><span class="honor-sym">★</span><div class="honor-text"><strong>College Board National Recognition Program</strong> · Awardee (2025)</div></div>
@@ -707,7 +810,7 @@
       <div class="honor-item fade-in"><span class="honor-sym">★</span><div class="honor-text"><strong>UH ACAP — 1st Place</strong> · Entrepreneurship Competition (2025)</div></div>
       <div class="honor-item fade-in"><span class="honor-sym">★</span><div class="honor-text"><strong>Education for Tomorrow Alliance Science Fair</strong> · 3rd Place Systems Software (2026)</div></div>
       <div class="honor-item fade-in"><span class="honor-sym">★</span><div class="honor-text"><strong>TWHS Tennis Team</strong> · 10+ medals · Part of State Championship Team (2023–Present)</div></div>
-      <div class="honor-item fade-in"><span class="honor-sym">★</span><div class="honor-text"><strong>Published Researcher</strong> · National High School Journal of Science · Peer-Reviewed (2026)</div></div>
+      <div class="honor-item fade-in"><span class="honor-sym">★</span><div class="honor-text"><strong>2× Published Researcher</strong> · National High School Journal of Science · Peer-Reviewed (2026)</div></div>
     </div>
   </div>
 </section>
