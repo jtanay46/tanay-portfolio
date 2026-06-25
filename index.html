@@ -276,10 +276,10 @@
   <div class="nav-links">
     <a href="#mission">Philosophy</a>
     <a href="#projects">Research</a>
-    <a href="#why">Why</a>
-    <a href="#skills">Stack</a>
-    <a href="#media">Repository</a>
     <a href="#testimonials">Testimonials</a>
+    <a href="#why">Why</a>
+    <a href="#media">Repository</a>
+    <a href="#skills">Stack</a>
     <a href="#honors">Awards</a>
     <a href="#contact">Contact</a>
   </div>
@@ -297,11 +297,11 @@
       <h1 class="hero-headline">
         I build <span class="accent-blue">communication systems</span><br/>
         for places where infrastructure fails<br/>
-        <span class="accent-green">— because access shouldn't depend on where you live.</span>
+        <span class="accent-green">because access shouldn't depend on where you live.</span>
       </h1>
       <p class="hero-sub">
-        <strong>Tanay Joshi</strong> — ECE Researcher · IEEE Guest Speaker · Patent-Pending Innovator<br/>
-        2nd Place Rice STEM Innovator · 1st Place ACAP Entrepreneur · 2× Published Researcher
+        <strong>Tanay Joshi</strong> · Class of 2027 · The Woodlands, TX<br/>
+        Published research in wireless networking, adaptive communication systems, and educational access.
       </p>
       <div style="display:flex;gap:0.8rem;flex-wrap:wrap;">
         <a href="#mission" class="btn btn-blue">⬡ Read My Philosophy</a>
@@ -332,7 +332,7 @@
           <span class="highlight">The first thing I ever built for someone else was a workaround for a projector that kept dying.</span>
         </p>
         <p>
-          The summer before sophomore year, I tutored kids in low-income housing through SEWA. I showed up with lesson plans and a laptop in my backpack, assuming I was the one with something to teach. Then a kid named Omar beat me at soccer, twice, and raced me through multiplication problems just to get back outside faster. These weren't kids who needed saving. They were kids exactly like me who happened to be born with less.
+          The summer before sophomore year, I tutored kids in low-income housing through SEWA. I showed up with lesson plans and a laptop in my backpack, assuming I was the one with something to teach. Then a kid named Omar beat me at soccer, twice, and raced me through multiplication problems just to get back outside faster. These weren't kids who needed saving. They were kids exactly like me, competitive, curious, and stubborn, who happened to have access to fewer resources.
         </p>
         <p>
           What they didn't have was infrastructure. Half the time the room's technology didn't work, so I started hauling my own from home, my laptop and HDMI cables, whatever it took to get a lesson onto the screen. When the projector died, learning stopped with it. That was the summer I understood something I've built around ever since: <span class="highlight">the gap between a kid who gets the chance and a kid who doesn't is usually not talent. It's access. And access is something you can engineer.</span>
@@ -365,7 +365,7 @@
         <div class="proj-title">Adaptive Image Compression for Bandwidth-Constrained UAVs</div>
         <span class="proj-status pub">Published · NHSJS 2026</span> <span class="proj-status patent">⚙️ Patent Pending · USPTO 2026</span>
         <p class="proj-desc">
-          Developed a dynamic JPEG compression framework that adjusts quality levels based on real-time Round-Trip Time (RTT) measurements. The system targets drone swarms relaying imagery in areas with no infrastructure — disaster zones, mountain rescues, rural medicine drops — where standard fixed-quality approaches fail under congestion.
+          Developed a dynamic JPEG compression framework that adjusts quality levels based on real-time Round-Trip Time (RTT) measurements. The system targets drone swarms relaying imagery in areas with no infrastructure, like disaster zones, mountain rescues, and rural medicine drops, where standard fixed-quality approaches fail under congestion.
         </p>
         <p class="proj-desc" style="margin-top:-0.4rem;">
           Hardware testing showed latency reductions of 41–83% under degraded network conditions. <span style="color:#5a6479;font-size:0.82rem;">(Technical: statistical validation using mixed-effects modeling, p &lt; 0.001, tested on Raspberry Pi 5 using Linux Traffic Control (tc) to simulate real congestion.)</span>
@@ -378,7 +378,7 @@
 
         <div class="challenge-box">
           <div class="challenge-label">// challenges &amp; tradeoffs</div>
-          <div class="challenge-text">My first controller had no hysteresis. Under real congestion it oscillated between quality levels every few hundred milliseconds, making latency worse rather than better. I spent a week convinced the Raspberry Pi was defective before realizing the feedback loop itself was the problem. Adding a dead zone to prevent rapid re-triggering fixed it — but at the cost of slightly delayed reactions to network changes. That tradeoff is documented in the manuscript.</div>
+          <div class="challenge-text">My first controller had no hysteresis. Under real congestion it oscillated between quality levels every few hundred milliseconds, making latency worse rather than better. I spent a week convinced the Raspberry Pi was defective before realizing the feedback loop itself was the problem. Adding a dead zone to prevent rapid re-triggering fixed it, though at the cost of slightly delayed reactions to network changes. That tradeoff is documented in the manuscript.</div>
         </div>
 
         <div class="stack-row">
@@ -402,7 +402,7 @@
         <div class="proj-title">Adaptive Compression Controller for Congested Wireless Networks</div>
         <span class="proj-status patent">🔐 PATENT PENDING · Filed May 23, 2026</span>
         <p class="proj-desc" style="margin-top:0.8rem;color:#9ba5bb;">
-          A system that dynamically reduces image quality during network congestion and restores it when bandwidth recovers — cutting latency by up to <strong style="color:#c9a84c;">83%</strong> when a drone's video link would otherwise collapse.
+          A system that dynamically reduces image quality during network congestion and restores it when bandwidth recovers, cutting latency by up to <strong style="color:#c9a84c;">83%</strong> when a drone's video link would otherwise collapse.
         </p>
         <div class="patent-banner">
           <div class="patent-banner-label">Official Title of Invention</div>
@@ -411,11 +411,11 @@
         <div class="patent-meta-row">
           <span class="patent-meta-chip">Inventor: Tanay B. Joshi</span>
           <span class="patent-meta-chip">Filed: May 23, 2026</span>
-          <span class="patent-meta-chip">Micro Entity — Student Inventor</span>
+          <span class="patent-meta-chip">Micro Entity · Student Inventor</span>
           <span class="patent-meta-chip">Application #: Pending Issuance</span>
         </div>
         <p class="proj-desc">
-          A novel application-layer compression control method solving the <strong style="color:#c9a84c;">bandwidth saturation cliff</strong> in multi-node wireless networks. The controller reduces compression fidelity aggressively upon congestion and recovers it conservatively — an asymmetric ratcheting effect that biases the system toward bandwidth preservation. A proportional hysteresis deadband prevents oscillation at threshold boundaries.
+          A novel application-layer compression control method solving the <strong style="color:#c9a84c;">bandwidth saturation cliff</strong> in multi-node wireless networks. The controller reduces compression fidelity aggressively upon congestion and recovers it conservatively, an asymmetric ratcheting effect that biases the system toward bandwidth preservation. A proportional hysteresis deadband prevents oscillation at threshold boundaries.
         </p>
         <p class="proj-desc" style="margin-top:-0.4rem;">
           Empirical validation across 50 trials: <strong style="color:#c9a84c;">83% latency reduction</strong> vs. static compression (0.926s vs. 5.468s). Zero oscillation events. r = −0.668, p &lt; 0.001. Covers UAV swarms, FANETs, mobile robotics, satellite uplinks, edge AI nodes, IoT sensor swarms, and disaster-response mesh systems.
@@ -461,7 +461,7 @@
 
         <div class="challenge-box green">
           <div class="challenge-label green">// challenges &amp; tradeoffs</div>
-          <div class="challenge-text">I initially assumed LiFi would outperform WiFi broadly — the theory supports it. But hardware disagreed. Ambient light from a room lamp was contaminating the photodiode readings and spiking latency measurements. Three days of shielding experiments were needed to isolate the signal. The lesson: theoretical performance and physical hardware performance are genuinely different problems. The paper is honest about that gap.</div>
+          <div class="challenge-text">I initially assumed LiFi would outperform WiFi broadly, since the theory supports it. But hardware disagreed. Ambient light from a room lamp was contaminating the photodiode readings and spiking latency measurements. Three days of shielding experiments were needed to isolate the signal. The lesson: theoretical performance and physical hardware performance are genuinely different problems. The paper is honest about that gap.</div>
         </div>
 
         <div class="stack-row">
@@ -482,10 +482,10 @@
       <!-- INFO DIET -->
       <div class="project-card fade-in">
         <div class="proj-icon">🛡️</div>
-        <div class="proj-title">Information Diet — Browser-Side AI Media Auditing Tool</div>
+        <div class="proj-title">Information Diet · Browser-Side AI Media Auditing Tool</div>
         <span class="proj-status review">In Development</span>
         <p class="proj-desc">
-          An AI-powered tool that helps users audit their own media consumption and flag synthetic or misleading content. Optimized for browser-side inference using TensorFlow.js so all analysis runs locally — no data leaves the device, ensuring 100% user privacy. Built on the idea that critical thinking is a skill you can engineer for.
+          An AI-powered tool that helps users audit their own media consumption and flag synthetic or misleading content. Optimized for browser-side inference using TensorFlow.js so all analysis runs locally and no data leaves the device, ensuring 100% user privacy. Built on the idea that critical thinking is a skill you can engineer for.
         </p>
         <div class="stack-row">
           <span class="badge">JavaScript</span>
@@ -500,10 +500,10 @@
       <!-- MYSHOWBUCKS -->
       <div class="project-card green fade-in">
         <div class="proj-icon green">🎭</div>
-        <div class="proj-title">MyShowBucks — Financial Platform for Nonprofit Theater</div>
+        <div class="proj-title">MyShowBucks · Financial Platform for Nonprofit Theater</div>
         <span class="proj-status live">Live · myshowbucks.com</span>
         <p class="proj-desc">
-          Founded and built a budget management platform now managing financial workflows for a nonprofit theater company. The centralized MVC architecture replaced a spreadsheet-and-email system, reducing administrative overhead by around 75%. Built iteratively with the theater managers — they told me what was broken, I fixed it, repeat.
+          Founded and built a budget management platform now managing financial workflows for a nonprofit theater company. The centralized MVC architecture replaced a spreadsheet-and-email system, reducing administrative overhead by around 75%. Built iteratively with the theater managers: they told me what was broken, I fixed it, repeat.
         </p>
         <div class="stack-row">
           <span class="badge green">Ruby on Rails</span>
@@ -517,10 +517,10 @@
       <!-- SAT -->
       <div class="project-card fade-in">
         <div class="proj-icon">🎓</div>
-        <div class="proj-title">S.A.T. — Peer-to-Peer Tutoring Platform</div>
+        <div class="proj-title">S.A.T. · Peer-to-Peer Tutoring Platform</div>
         <span class="proj-status live" style="background:rgba(57,255,20,0.1);color:var(--green);border-color:rgba(57,255,20,0.25);">🏆 1st Place · Accelerated Career Awareness Program 2025</span>
         <p class="proj-desc">
-          Designed, built, and presented the entire platform as sole technical architect — from database schema to the live judge demo. Connects under-resourced students with peer tutors in real time. The students most likely to need help are also least likely to have a private tutor at home; this was built for them.
+          Designed, built, and presented the entire platform as sole technical architect, from database schema to the live judge demo. Connects under-resourced students with peer tutors in real time. The students most likely to need help are also least likely to have a private tutor at home; this was built for them.
         </p>
         <div style="margin-bottom:1rem;">
           <div style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--blue);margin-bottom:0.45rem;">KEY CONTRIBUTIONS</div>
@@ -542,7 +542,7 @@
       <!-- DROPSHIPPERS -->
       <div class="project-card green fade-in">
         <div class="proj-icon green">🏔️</div>
-        <div class="proj-title">The Dropshippers — Himalayan Last-Mile Medical Drone</div>
+        <div class="proj-title">The Dropshippers · Himalayan Last-Mile Medical Drone</div>
         <span class="proj-status live">🥈 2nd Place · Rice STEM Young Scholars 2024</span>
         <p class="proj-desc">
           Selected as 1 of 100 students for Rice University's STEM Young Scholars workshop. Led hardware design of an autonomous supply system for temperature-sensitive Rheumatoid Arthritis medication across a 200-mile Himalayan route. The core challenge: vibration at altitude degrades drug potency. Solution: a payload chamber using carbon fiber, EVA foam, and rubberized damping with triangular structural geometry to neutralize resonance frequencies.
@@ -599,25 +599,42 @@
           Every project here traces back to a single question I first ran into in a SEWA tutoring room: <span class="highlight">who gets left out when a system assumes everyone already has what they need?</span>
         </p>
         <p>
-          A projector that died mid-lesson taught me that the bottleneck on opportunity is rarely talent — it's infrastructure. <span class="accent">SEWA tutoring</span> and the <span class="accent">SAT peer-tutoring platform</span> attack that gap at the human layer, connecting students who need help with the people who can give it. <span class="accent">MyShowBucks</span> rebuilt a nonprofit's finances when its "system" was a pile of receipts. And my research — <span class="accent">adaptive UAV compression</span> and <span class="accent">hybrid LiFi-WiFi</span> — attacks the same gap at the physical layer, keeping information flowing where networks are unreliable, congested, or absent entirely.
+          A projector that died mid-lesson taught me that the bottleneck on opportunity is rarely talent. It's infrastructure. <span class="accent">SEWA tutoring</span> and the <span class="accent">SAT peer-tutoring platform</span> attack that gap at the human layer, connecting students who need help with the people who can give it. <span class="accent">MyShowBucks</span> rebuilt a nonprofit's finances when its "system" was a pile of receipts. And my research in <span class="accent">adaptive UAV compression</span> and <span class="accent">hybrid LiFi-WiFi</span> attacks the same gap at the physical layer, keeping information flowing where networks are unreliable, congested, or absent entirely.
         </p>
         <p>
           Communication systems are where access is won or lost. A dropped packet can mean a missed medication delivery; a dead network handoff can mean a student who never gets the help they were promised. <span class="highlight">I want to engineer the infrastructure that decides who gets included.</span>
         </p>
-        <div style="background:#0a0a0a;border:1px solid var(--border);border-radius:8px;padding:1.4rem 1.6rem;margin-top:1.4rem;font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:#8a95ab;line-height:1.9;overflow-x:auto;">
-<span style="color:var(--blue);">Problem I care about:</span>
-<span style="color:#e0e8f5;">Access to information</span>
-&nbsp;
-&nbsp;&nbsp;├──&nbsp;<span style="color:var(--green);">SEWA tutoring</span>&nbsp;&mdash; access at the human layer
-&nbsp;&nbsp;│
-&nbsp;&nbsp;├──&nbsp;<span style="color:var(--green);">S.A.T. tutoring platform</span>&nbsp;&mdash; scaling that access
-&nbsp;&nbsp;│
-&nbsp;&nbsp;├──&nbsp;<span style="color:var(--green);">MyShowBucks</span>&nbsp;&mdash; access to operational clarity
-&nbsp;&nbsp;│
-&nbsp;&nbsp;├──&nbsp;<span style="color:#ffb700;">LiFi-WiFi research</span>&nbsp;&mdash; access at the physical layer
-&nbsp;&nbsp;│
-&nbsp;&nbsp;└──&nbsp;<span style="color:#ffb700;">Adaptive UAV communications</span>&nbsp;&mdash; access when networks collapse
-        </div>
+        <div style="margin-top:1.6rem;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--blue);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.3rem;">Problem I care about</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.95rem;color:#e0e8f5;font-weight:600;margin-bottom:1.3rem;">Access to information</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0.8rem;">
+            <div style="background:rgba(57,255,20,0.05);border:1px solid rgba(57,255,20,0.2);border-radius:8px;padding:0.9rem 1rem;">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:0.58rem;color:var(--green);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.4rem;">Human Layer</div>
+              <div style="font-size:0.82rem;color:#c9d1e0;font-weight:500;line-height:1.4;">SEWA Tutoring</div>
+              <div style="font-size:0.72rem;color:#7a8599;margin-top:0.2rem;">Where the question started</div>
+            </div>
+            <div style="background:rgba(57,255,20,0.05);border:1px solid rgba(57,255,20,0.2);border-radius:8px;padding:0.9rem 1rem;">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:0.58rem;color:var(--green);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.4rem;">Human Layer</div>
+              <div style="font-size:0.82rem;color:#c9d1e0;font-weight:500;line-height:1.4;">S.A.T. Platform</div>
+              <div style="font-size:0.72rem;color:#7a8599;margin-top:0.2rem;">Scaling that access</div>
+            </div>
+            <div style="background:rgba(57,255,20,0.05);border:1px solid rgba(57,255,20,0.2);border-radius:8px;padding:0.9rem 1rem;">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:0.58rem;color:var(--green);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.4rem;">Operations</div>
+              <div style="font-size:0.82rem;color:#c9d1e0;font-weight:500;line-height:1.4;">MyShowBucks</div>
+              <div style="font-size:0.72rem;color:#7a8599;margin-top:0.2rem;">Access to clarity</div>
+            </div>
+            <div style="background:rgba(255,183,0,0.05);border:1px solid rgba(255,183,0,0.22);border-radius:8px;padding:0.9rem 1rem;">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:0.58rem;color:#ffb700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.4rem;">Physical Layer</div>
+              <div style="font-size:0.82rem;color:#c9d1e0;font-weight:500;line-height:1.4;">LiFi-WiFi Research</div>
+              <div style="font-size:0.72rem;color:#7a8599;margin-top:0.2rem;">Reaching the unreachable</div>
+            </div>
+            <div style="background:rgba(255,183,0,0.05);border:1px solid rgba(255,183,0,0.22);border-radius:8px;padding:0.9rem 1rem;">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:0.58rem;color:#ffb700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.4rem;">Physical Layer</div>
+              <div style="font-size:0.82rem;color:#c9d1e0;font-weight:500;line-height:1.4;">Adaptive UAV Comms</div>
+              <div style="font-size:0.72rem;color:#7a8599;margin-top:0.2rem;">Access when networks collapse</div>
+            </div>
+          </div>
+        </div</div>
       </div>
     </div>
   </div>
@@ -634,10 +651,10 @@
       <!-- Info Diet YouTube -->
       <div class="project-card fade-in" style="padding:0;overflow:hidden;">
         <div class="embed-wrap">
-          <iframe src="https://www.youtube.com/embed/Vwh-7L4skL4" title="Information Diet — Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/Vwh-7L4skL4" title="Information Diet · Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div style="padding:1rem 1.2rem;">
-          <div class="proj-title" style="font-size:0.86rem;">Demo — Information Diet</div>
+          <div class="proj-title" style="font-size:0.86rem;">Demo · Information Diet</div>
           <div class="proj-desc" style="font-size:0.76rem;margin-top:0.25rem;">Browser-side AI media auditing tool · live product walkthrough</div>
         </div>
       </div>
@@ -674,7 +691,7 @@
       <div class="repo-card fade-in">
         <div class="repo-icon">📋</div>
         <div>
-          <div class="repo-title">Information Diet — Project Board</div>
+          <div class="repo-title">Information Diet · Project Board</div>
           <div class="repo-meta">Development Tracker · Feature Backlog · Milestones</div>
         </div>
         <div class="repo-desc">Live project board tracking sprint progress and open research questions for the browser-side AI ethics tool.</div>
@@ -692,7 +709,7 @@
         </div>
       </div>
 
-      <!-- IEEE Guest Speaker Talk — Video Placeholder -->
+      <!-- IEEE Guest Speaker Talk · Video Placeholder -->
       <div class="project-card fade-in" style="padding:0;overflow:hidden;">
         <div style="position:relative;padding-bottom:56.25%;background:#080a0d;border-radius:10px 10px 0 0;overflow:hidden;">
           <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;">
@@ -715,13 +732,13 @@
         <div style="padding:1rem 1.2rem;">
           <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.3rem;">
             <span>📊</span>
-            <div class="proj-title" style="font-size:0.86rem;">Hybrid LiFi–WiFi — Full Presentation Deck</div>
+            <div class="proj-title" style="font-size:0.86rem;">Hybrid LiFi–WiFi · Full Presentation Deck</div>
           </div>
           <div class="proj-desc" style="font-size:0.76rem;margin-top:0.1rem;">NHSJS 2026 · Peer-Reviewed · Hardware validation using MCP3008 ADC &amp; SPI switching logic</div>
         </div>
       </div>
 
-      <!-- UT Austin CS Academy — Video Placeholder -->
+      <!-- UT Austin CS Academy · Video Placeholder -->
       <div class="project-card fade-in" style="padding:0;overflow:hidden;">
         <div style="position:relative;padding-bottom:56.25%;background:#080a0d;border-radius:10px 10px 0 0;overflow:hidden;">
           <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;">
@@ -734,7 +751,7 @@
           <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.4rem;flex-wrap:wrap;">
             <span style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;background:rgba(57,255,20,0.1);color:var(--green);border:1px solid rgba(57,255,20,0.25);padding:0.15rem 0.55rem;border-radius:3px;">🏆 Best Light Show &amp; Sync Award</span>
           </div>
-          <div class="proj-title" style="font-size:0.86rem;">UT Austin CS Academy — Arduino Light Show</div>
+          <div class="proj-title" style="font-size:0.86rem;">UT Austin CS Academy · Arduino Light Show</div>
           <div class="proj-desc" style="font-size:0.76rem;margin-top:0.25rem;">C++ firmware on Arduino microcontrollers · high-precision LED array synchronization to multi-track audio · Team Lead Programmer &amp; Spokesperson</div>
         </div>
       </div>
@@ -746,7 +763,7 @@
         <div style="padding:1rem 1.2rem;">
           <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.3rem;">
             <span>📊</span>
-            <div class="proj-title" style="font-size:0.86rem;">S.A.T. — ACAP 1st Place Pitch Deck</div>
+            <div class="proj-title" style="font-size:0.86rem;">S.A.T. · ACAP 1st Place Pitch Deck</div>
           </div>
           <div class="proj-desc" style="font-size:0.76rem;margin-top:0.1rem;">Accelerated Career Awareness Program 2025 · full presentation</div>
         </div>
@@ -759,7 +776,7 @@
         <div style="padding:1rem 1.2rem;">
           <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.3rem;">
             <span>📊</span>
-            <div class="proj-title" style="font-size:0.86rem;">The Dropshippers — Himalayan Drone Deck</div>
+            <div class="proj-title" style="font-size:0.86rem;">The Dropshippers · Himalayan Drone Deck</div>
           </div>
           <div class="proj-desc" style="font-size:0.76rem;margin-top:0.1rem;">Rice STEM Young Scholars 2025 · 2nd Place presentation</div>
         </div>
@@ -769,7 +786,7 @@
       <div class="repo-card green fade-in">
         <div class="repo-icon">🎭</div>
         <div>
-          <div class="repo-title">MyShowBucks — Live Production App</div>
+          <div class="repo-title">MyShowBucks · Live Production App</div>
           <div class="repo-meta">Ruby on Rails · React · myshowbucks.com</div>
         </div>
         <div class="repo-desc">Full-stack nonprofit budget platform in active production use. Centralized MVC architecture replaced the theater company's spreadsheet workflow.</div>
@@ -795,73 +812,35 @@
           <span class="skill-tag">Java</span>
           <span class="skill-tag">JavaScript</span>
           <span class="skill-tag">Ruby</span>
-          <span class="skill-tag">HTML / CSS</span>
           <span class="skill-tag">SQL</span>
-          <span class="skill-tag">Bash / Shell</span>
+          <span class="skill-tag">HTML / CSS</span>
         </div>
       </div>
 
       <div class="fade-in">
-        <div class="skill-group-title">Frameworks &amp; Platforms</div>
+        <div class="skill-group-title green">Systems &amp; Frameworks</div>
         <div class="skill-tag-grid">
-          <span class="skill-tag">React</span>
-          <span class="skill-tag">Ruby on Rails</span>
-          <span class="skill-tag">Firebase</span>
-          <span class="skill-tag">Vite</span>
-          <span class="skill-tag">TensorFlow.js</span>
-          <span class="skill-tag">Node.js</span>
-          <span class="skill-tag">SQLite</span>
-          <span class="skill-tag">MongoDB</span>
+          <span class="skill-tag green">React</span>
+          <span class="skill-tag green">Ruby on Rails</span>
+          <span class="skill-tag green">Firebase</span>
+          <span class="skill-tag green">TensorFlow.js</span>
+          <span class="skill-tag green">Raspberry Pi 5</span>
+          <span class="skill-tag green">MCP3008 ADC / SPI</span>
+          <span class="skill-tag green">Linux tc</span>
+          <span class="skill-tag green">CAD / SolidWorks</span>
+          <span class="skill-tag green">Distributed Systems</span>
         </div>
       </div>
 
       <div class="fade-in">
-        <div class="skill-group-title">Hardware &amp; Systems</div>
+        <div class="skill-group-title amber">Research Methods</div>
         <div class="skill-tag-grid">
-          <span class="skill-tag">Raspberry Pi 5</span>
-          <span class="skill-tag">SPI / I2C</span>
-          <span class="skill-tag">MCP3008 ADC</span>
-          <span class="skill-tag">Linux tc</span>
-          <span class="skill-tag">Photodiode Arrays</span>
-          <span class="skill-tag">CAD / SolidWorks</span>
-          <span class="skill-tag">Distributed Systems</span>
-        </div>
-      </div>
-
-      <div class="fade-in">
-        <div class="skill-group-title green">Research &amp; Analysis</div>
-        <div class="skill-tag-grid">
-          <span class="skill-tag green">Mixed-Effects Modeling</span>
-          <span class="skill-tag green">RTT Analysis</span>
-          <span class="skill-tag green">Statistical Hypothesis Testing</span>
-          <span class="skill-tag green">AP Statistics</span>
-          <span class="skill-tag green">Peer Review Process</span>
-          <span class="skill-tag green">Technical Writing</span>
-        </div>
-      </div>
-
-      <div class="fade-in">
-        <div class="skill-group-title amber">Core Concepts</div>
-        <div class="skill-tag-grid">
-          <span class="skill-tag amber">OOK Modulation</span>
-          <span class="skill-tag amber">VLC (Visible Light Comm.)</span>
-          <span class="skill-tag amber">Signal-to-Noise Ratio (SNR)</span>
-          <span class="skill-tag amber">TCP/IP Networking</span>
+          <span class="skill-tag amber">Mixed-Effects Modeling</span>
+          <span class="skill-tag amber">Statistical Hypothesis Testing</span>
+          <span class="skill-tag amber">RTT Analysis</span>
           <span class="skill-tag amber">Adaptive Compression</span>
-          <span class="skill-tag amber">MVC Architecture</span>
-          <span class="skill-tag amber">Object-Oriented Design</span>
-          <span class="skill-tag amber">Browser-Side AI Inference</span>
-        </div>
-      </div>
-
-      <div class="fade-in">
-        <div class="skill-group-title">Leadership &amp; Other</div>
-        <div class="skill-tag-grid">
-          <span class="skill-tag">DECA State Champion</span>
-          <span class="skill-tag">Product Demo / Pitch</span>
-          <span class="skill-tag">Nonprofit Development</span>
-          <span class="skill-tag">UI/UX Iteration</span>
-          <span class="skill-tag">Competitive Tennis</span>
+          <span class="skill-tag amber">Peer Review Process</span>
+          <span class="skill-tag amber">Technical Writing</span>
         </div>
       </div>
 
@@ -877,13 +856,13 @@
     <div class="section-divider fade-in"></div>
     <div class="honor-grid">
       <div class="honor-item fade-in" style="border-color:rgba(255,183,0,0.3);background:rgba(255,183,0,0.03);"><span class="honor-sym" style="color:#ffb700;">★</span><div class="honor-text"><strong style="color:#c9a84c;">USPTO Patent Pending</strong> · Asymmetric Ratcheting Compression Controller · Student Inventor · Filed May 2026</div></div>
-      <div class="honor-item fade-in"><span class="honor-sym">★</span><div class="honor-text"><strong>UT Austin CS Academy — Best Light Show &amp; Synchronization Award</strong> (2026)</div></div>
-      <div class="honor-item fade-in"><span class="honor-sym">★</span><div class="honor-text"><strong>Texas DECA State Finalist — 1st Place</strong> · Qualified for ICDC International (2026)</div></div>
+      <div class="honor-item fade-in"><span class="honor-sym">★</span><div class="honor-text"><strong>UT Austin CS Academy · Best Light Show &amp; Synchronization Award</strong> (2026)</div></div>
+      <div class="honor-item fade-in"><span class="honor-sym">★</span><div class="honor-text"><strong>Texas DECA State Finalist · 1st Place</strong> · Qualified for ICDC International (2026)</div></div>
       <div class="honor-item fade-in"><span class="honor-sym">★</span><div class="honor-text"><strong>Gold Presidential Volunteer Service Award</strong> · AmeriCorps (2024)</div></div>
       <div class="honor-item fade-in"><span class="honor-sym">★</span><div class="honor-text"><strong>College Board National Recognition Program</strong> · Awardee (2025)</div></div>
       <div class="honor-item fade-in"><span class="honor-sym">★</span><div class="honor-text"><strong>District 4 DECA Champion</strong> · Marketing &amp; Tourism · State Qualifier ×2 (2025, 2026)</div></div>
-      <div class="honor-item fade-in"><span class="honor-sym">★</span><div class="honor-text"><strong>Rice University STEM Young Scholars</strong> · Top 100 · 2nd Place Overall — The Dropshippers (2024)</div></div>
-      <div class="honor-item fade-in"><span class="honor-sym">★</span><div class="honor-text"><strong>UH ACAP — 1st Place</strong> · Entrepreneurship Competition (2025)</div></div>
+      <div class="honor-item fade-in"><span class="honor-sym">★</span><div class="honor-text"><strong>Rice University STEM Young Scholars</strong> · Top 100 · 2nd Place Overall · The Dropshippers (2024)</div></div>
+      <div class="honor-item fade-in"><span class="honor-sym">★</span><div class="honor-text"><strong>UH ACAP · 1st Place</strong> · Entrepreneurship Competition (2025)</div></div>
       <div class="honor-item fade-in"><span class="honor-sym">★</span><div class="honor-text"><strong>Education for Tomorrow Alliance Science Fair</strong> · 3rd Place Systems Software (2026)</div></div>
       <div class="honor-item fade-in"><span class="honor-sym">★</span><div class="honor-text"><strong>TWHS Tennis Team</strong> · 10+ medals · Part of State Championship Team (2023–Present)</div></div>
       <div class="honor-item fade-in"><span class="honor-sym">★</span><div class="honor-text"><strong>2× Published Researcher</strong> · National High School Journal of Science · Peer-Reviewed (2026)</div></div>
