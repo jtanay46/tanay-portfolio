@@ -276,6 +276,7 @@
   <div class="nav-links">
     <a href="#mission">Philosophy</a>
     <a href="#projects">Research</a>
+    <a href="#why">Why</a>
     <a href="#skills">Stack</a>
     <a href="#media">Repository</a>
     <a href="#testimonials">Testimonials</a>
@@ -295,8 +296,8 @@
       </div>
       <h1 class="hero-headline">
         I build <span class="accent-blue">communication systems</span><br/>
-        for the places the<br/>
-        <span class="accent-green">internet doesn't reach.</span>
+        for places where infrastructure fails<br/>
+        <span class="accent-green">— because access shouldn't depend on where you live.</span>
       </h1>
       <p class="hero-sub">
         <strong>Tanay Joshi</strong> — ECE Researcher · IEEE Guest Speaker · Patent-Pending Innovator<br/>
@@ -328,13 +329,22 @@
       <span class="mission-tag">FOUNDER_NOTE.md</span>
       <div class="mission-text">
         <p>
-          <span class="highlight">The simulation crashed at 2 AM, and I had no idea why.</span> I'd spent three weeks writing what I thought was a clean RTT-based compression controller for my drone research. The logic was sound. The math checked out. But on the actual Raspberry Pi, under real network congestion, the JPEG quality stepped down to 10% and never recovered — the feedback loop was eating itself.
+          <span class="highlight">The first thing I ever built for someone else was a workaround for a projector that kept dying.</span>
         </p>
         <p>
-          That moment taught me more than any textbook. I had been thinking about the algorithm in isolation, not as something living inside a physical network with jitter, interference, and hardware limits. I had to rebuild the controller with hysteresis — a dead zone to stop it from thrashing quality levels every few hundred milliseconds. It worked. Latency dropped by up to 83%. But I never would have found that fix without first building something that broke completely.
+          The summer before sophomore year, I tutored kids in low-income housing through SEWA. I showed up with lesson plans and a laptop in my backpack, assuming I was the one with something to teach. Then a kid named Omar beat me at soccer, twice, and raced me through multiplication problems just to get back outside faster. These weren't kids who needed saving. They were kids exactly like me who happened to be born with less.
         </p>
         <p>
-          That's the engineering philosophy I carry everywhere: <span class="accent">build it until it fails, then understand why.</span> I'm drawn to problems at the boundary of hardware and humanity — places where a dropped packet might mean a missed medication dose, or where a bad network handoff might be the difference between a student who gets help and one who doesn't. I don't think equity is just a policy question. <span class="highlight">I think it's an engineering problem, and I want to work on it.</span>
+          What they didn't have was infrastructure. Half the time the room's technology didn't work, so I started hauling my own from home, my laptop and HDMI cables, whatever it took to get a lesson onto the screen. When the projector died, learning stopped with it. That was the summer I understood something I've built around ever since: <span class="highlight">the gap between a kid who gets the chance and a kid who doesn't is usually not talent. It's access. And access is something you can engineer.</span>
+        </p>
+        <p>
+          Everything on this site is a version of that idea. A compression controller that keeps a drone's video alive when the network is collapsing. A LiFi system for the places radio can't safely reach. A budget platform for a nonprofit that was running on crumpled receipts. Different problems, same question underneath: who gets left out when the system assumes everyone already has what they need?
+        </p>
+        <p>
+          My engineering philosophy is simple. <span class="accent">Build it until it fails, then understand why.</span> The failures are where the real problem actually lives, and the real problem is almost never the one you set out to solve. I'm drawn to the boundary between hardware and people, because that's where a dropped packet stops being a number and starts being a missed medication dose, or a kid in a tutoring room waiting on a projector that won't turn on.
+        </p>
+        <p>
+          <span class="highlight">I'm not done building. I don't think I will be.</span>
         </p>
       </div>
     </div>
@@ -358,7 +368,7 @@
           Developed a dynamic JPEG compression framework that adjusts quality levels based on real-time Round-Trip Time (RTT) measurements. The system targets drone swarms relaying imagery in areas with no infrastructure — disaster zones, mountain rescues, rural medicine drops — where standard fixed-quality approaches fail under congestion.
         </p>
         <p class="proj-desc" style="margin-top:-0.4rem;">
-          Statistical validation using mixed-effects modeling confirmed a latency reduction ranging from 41% to 83% under degraded network conditions (p &lt; 0.001). Hardware-tested on Raspberry Pi 5 using Linux Traffic Control (tc) to simulate real congestion scenarios.
+          Hardware testing showed latency reductions of 41–83% under degraded network conditions. <span style="color:#5a6479;font-size:0.82rem;">(Technical: statistical validation using mixed-effects modeling, p &lt; 0.001, tested on Raspberry Pi 5 using Linux Traffic Control (tc) to simulate real congestion.)</span>
         </p>
 
         <div class="graph-placeholder">
@@ -389,9 +399,12 @@
       <div class="project-card amber fade-in">
         <div class="proj-icon amber">⚙️</div>
         <div style="font-family:'JetBrains Mono',monospace;font-size:0.58rem;color:#ffb700;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.4rem;">United States Patent &amp; Trademark Office · Provisional Application</div>
-        <div class="proj-title">Asymmetric Ratcheting Compression Controller</div>
+        <div class="proj-title">Adaptive Compression Controller for Congested Wireless Networks</div>
         <span class="proj-status patent">🔐 PATENT PENDING · Filed May 23, 2026</span>
-        <div class="patent-banner" style="margin-top:0.8rem;">
+        <p class="proj-desc" style="margin-top:0.8rem;color:#9ba5bb;">
+          A system that dynamically reduces image quality during network congestion and restores it when bandwidth recovers — cutting latency by up to <strong style="color:#c9a84c;">83%</strong> when a drone's video link would otherwise collapse.
+        </p>
+        <div class="patent-banner">
           <div class="patent-banner-label">Official Title of Invention</div>
           <div class="patent-banner-title">Asymmetric Ratcheting Compression Controller with Proportional Hysteresis for Adaptive Media Payload Quality Management in Bandwidth-Constrained Multi-Node Wireless Transmission Systems</div>
         </div>
@@ -543,6 +556,69 @@
         <a href="https://github.com/jtanay46" target="_blank" class="proj-link green">↗ github.com/jtanay46</a>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" style="background:#0d0f14;border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="section-inner">
+    <div class="section-label">// social proof</div>
+    <h2 class="section-title">Testimonials</h2>
+    <div class="section-divider"></div>
+
+    <div style="max-width:760px;">
+      <div style="background:var(--card-bg);border:1px solid rgba(57,255,20,0.18);border-radius:10px;padding:2.2rem 2.4rem;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--green),transparent);"></div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:3.5rem;color:rgba(57,255,20,0.15);line-height:1;margin-bottom:0.5rem;user-select:none;">"</div>
+        <p style="font-size:0.97rem;color:#9ba5bb;line-height:1.85;margin-bottom:1.6rem;font-style:italic;">
+          Tanay is a curious problem solver who approaches software through the lens of real world utility. He had taken the initiative to listen to and help me when he visited our theatre as part of the Leadership High School community engagement. He spent time in understanding our workflows to identify specific improvement opportunities. Instead of a surface-level app, he developed a system that provides genuine budget intelligence and operational clarity. His ability to ingest users' feedback and iterate on complex requirements is exceptional. He is a forward thinking engineer who understands the intersection of technology and organizational management.
+        </p>
+        <div style="display:flex;align-items:center;gap:0.9rem;">
+          <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--blue));display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#0a0a0a;font-weight:700;flex-shrink:0;">CS</div>
+          <div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:0.82rem;color:#e8edf5;font-weight:600;">Cindy Siple</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--green);margin-top:0.15rem;">Managing Director · The Players Theatre</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY COMMUNICATIONS -->
+<section id="why" style="background:var(--obsidian);">
+  <div class="section-inner">
+    <div class="section-label fade-in">// the throughline</div>
+    <h2 class="section-title fade-in">Why Communications?</h2>
+    <div class="section-divider fade-in"></div>
+    <div class="mission-card fade-in" style="max-width:820px;">
+      <span class="mission-tag">WHY_THIS.md</span>
+      <div class="mission-text">
+        <p>
+          Every project here traces back to a single question I first ran into in a SEWA tutoring room: <span class="highlight">who gets left out when a system assumes everyone already has what they need?</span>
+        </p>
+        <p>
+          A projector that died mid-lesson taught me that the bottleneck on opportunity is rarely talent — it's infrastructure. <span class="accent">SEWA tutoring</span> and the <span class="accent">SAT peer-tutoring platform</span> attack that gap at the human layer, connecting students who need help with the people who can give it. <span class="accent">MyShowBucks</span> rebuilt a nonprofit's finances when its "system" was a pile of receipts. And my research — <span class="accent">adaptive UAV compression</span> and <span class="accent">hybrid LiFi-WiFi</span> — attacks the same gap at the physical layer, keeping information flowing where networks are unreliable, congested, or absent entirely.
+        </p>
+        <p>
+          Communication systems are where access is won or lost. A dropped packet can mean a missed medication delivery; a dead network handoff can mean a student who never gets the help they were promised. <span class="highlight">I want to engineer the infrastructure that decides who gets included.</span>
+        </p>
+        <div style="background:#0a0a0a;border:1px solid var(--border);border-radius:8px;padding:1.4rem 1.6rem;margin-top:1.4rem;font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:#8a95ab;line-height:1.9;overflow-x:auto;">
+<span style="color:var(--blue);">Problem I care about:</span>
+<span style="color:#e0e8f5;">Access to information</span>
+&nbsp;
+&nbsp;&nbsp;├──&nbsp;<span style="color:var(--green);">SEWA tutoring</span>&nbsp;&mdash; access at the human layer
+&nbsp;&nbsp;│
+&nbsp;&nbsp;├──&nbsp;<span style="color:var(--green);">S.A.T. tutoring platform</span>&nbsp;&mdash; scaling that access
+&nbsp;&nbsp;│
+&nbsp;&nbsp;├──&nbsp;<span style="color:var(--green);">MyShowBucks</span>&nbsp;&mdash; access to operational clarity
+&nbsp;&nbsp;│
+&nbsp;&nbsp;├──&nbsp;<span style="color:#ffb700;">LiFi-WiFi research</span>&nbsp;&mdash; access at the physical layer
+&nbsp;&nbsp;│
+&nbsp;&nbsp;└──&nbsp;<span style="color:#ffb700;">Adaptive UAV communications</span>&nbsp;&mdash; access when networks collapse
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -811,32 +887,6 @@
       <div class="honor-item fade-in"><span class="honor-sym">★</span><div class="honor-text"><strong>Education for Tomorrow Alliance Science Fair</strong> · 3rd Place Systems Software (2026)</div></div>
       <div class="honor-item fade-in"><span class="honor-sym">★</span><div class="honor-text"><strong>TWHS Tennis Team</strong> · 10+ medals · Part of State Championship Team (2023–Present)</div></div>
       <div class="honor-item fade-in"><span class="honor-sym">★</span><div class="honor-text"><strong>2× Published Researcher</strong> · National High School Journal of Science · Peer-Reviewed (2026)</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section id="testimonials" style="background:#0d0f14;border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
-  <div class="section-inner">
-    <div class="section-label">// social proof</div>
-    <h2 class="section-title">Testimonials</h2>
-    <div class="section-divider"></div>
-
-    <div style="max-width:760px;">
-      <div style="background:var(--card-bg);border:1px solid rgba(57,255,20,0.18);border-radius:10px;padding:2.2rem 2.4rem;position:relative;overflow:hidden;">
-        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--green),transparent);"></div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:3.5rem;color:rgba(57,255,20,0.15);line-height:1;margin-bottom:0.5rem;user-select:none;">"</div>
-        <p style="font-size:0.97rem;color:#9ba5bb;line-height:1.85;margin-bottom:1.6rem;font-style:italic;">
-          Tanay is a curious problem solver who approaches software through the lens of real world utility. He had taken the initiative to listen to and help me when he visited our theatre as part of the Leadership High School community engagement. He spent time in understanding our workflows to identify specific improvement opportunities. Instead of a surface-level app, he developed a system that provides genuine budget intelligence and operational clarity. His ability to ingest users' feedback and iterate on complex requirements is exceptional. He is a forward thinking engineer who understands the intersection of technology and organizational management.
-        </p>
-        <div style="display:flex;align-items:center;gap:0.9rem;">
-          <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--blue));display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#0a0a0a;font-weight:700;flex-shrink:0;">CS</div>
-          <div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:0.82rem;color:#e8edf5;font-weight:600;">Cindy Siple</div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--green);margin-top:0.15rem;">Managing Director · The Players Theatre</div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
